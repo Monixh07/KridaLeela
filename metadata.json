@@ -1,0 +1,7 @@
+{
+  "name": "KRIDALEELA",
+  "description": "Where India Plays, Tells & Remembers. A cultural discovery platform for traditional Indian games and stories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

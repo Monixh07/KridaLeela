@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #FDFBF7;
+    --bg-surface: #F5EFEB;
+    --bg-surface-elevated: #FFFFFF;
+    --border-subtle: #E6DCD1;
+    --text-primary: #28211A;
+    --text-secondary: #746659;
+    --text-muted: #9E8F80;
+    --accent-terracotta: #B43B22;
+    --accent-green: #1E4D3E;
+    --accent-saffron: #C88A2C;
+  }
+
+  .dark {
+    --bg-canvas: #151210;
+    --bg-surface: #201B17;
+    --bg-surface-elevated: #2A241F;
+    --border-subtle: #3A322B;
+    --text-primary: #F0EAE1;
+    --text-secondary: #B3A596;
+    --text-muted: #827567;
+    --accent-terracotta: #D95338;
+    --accent-green: #2E725D;
+    --accent-saffron: #DE9F3F;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-display {
+  font-family: 'Rozha One', 'Cinzel', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CCC0;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3F3730;
+}
+
+/* Chenne Mane Sowing & Capture Keyframes */
+@keyframes seedDrop {
+  0% {
+    transform: translateY(-16px) scale(1.3);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(2px) scale(0.95);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-2px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cupRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(251, 191, 36, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+  }
+}
+
+@keyframes harvestPulse {
+  0%, 100% {
+    box-shadow: 0 0 16px 2px rgba(52, 211, 153, 0.7);
+    transform: scale(1.03);
+  }
+  50% {
+    box-shadow: 0 0 28px 6px rgba(52, 211, 153, 0.9);
+    transform: scale(1.06);
+  }
+}
+
+@keyframes floatBadge {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-seed-drop {
+  animation: seedDrop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-cup-ripple {
+  animation: cupRipple 0.6s ease-out infinite;
+}
+
+.animate-harvest-pulse {
+  animation: harvestPulse 1s ease-in-out infinite;
+}
+
+.animate-float-badge {
+  animation: floatBadge 1.2s ease-out forwards;
+}
